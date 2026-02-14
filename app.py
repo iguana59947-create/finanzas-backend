@@ -50,8 +50,8 @@ def agregar_gasto(gasto: Gasto):
 
     fila = 3 + ((dia - 1) // 2)
     columna_detalle = "M" if dia % 2 != 0 else "N"
-    celda_detalle = f"{mes_hoja}!{columna_detalle}{fila}"
-    celda_total = f"{mes_hoja}!O{fila}"
+    celda_detalle = f"'{mes_hoja}'!{columna_detalle}{fila}"
+    celda_total = f"'{mes_hoja}'!O{fila}"
 
     # Leer total actual
     result = service.spreadsheets().values().get(
