@@ -60,7 +60,12 @@ def agregar_gasto(gasto: Gasto):
     ).execute()
 
     valores = result.get("values", [])
-    total_actual = float(valores[0][0]) if valores else 0
+    if valores:
+    texto_total = valores[0][0]
+    texto_limpio = texto_total.replace("$", "").replace("-", "").strip()
+    total_actual = float(texto_limpio) if texto_limpio else 0
+else:
+    total_actual = 0
 
     nuevo_total = total_actual + gasto.monto
 
