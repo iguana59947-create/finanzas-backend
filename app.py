@@ -46,7 +46,7 @@ def agregar_gasto(gasto: Gasto):
         "December": "Diciembre"
     }
 
-    mes_hoja = meses[fecha_obj.strftime("%B")] + " " + str(fecha_obj.year)
+    mes_hoja = "Hoja1"
 
     fila = 3 + ((dia - 1) // 2)
     columna_detalle = "M" if dia % 2 != 0 else "N"
